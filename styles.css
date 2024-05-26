@@ -167,9 +167,9 @@
     .mobile-menu-btn {
       display: flex;
       cursor: pointer;
+      z-index: 2;
     }
     .mobile-menu {
-      display: none;
       flex-direction: column;
       position: absolute;
       right: 0;
