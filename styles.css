@@ -1,24 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
 
 * {
-    font-family: "Epilogue", sans-serif;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  :root {
-    --Almost-White: hsl(0, 0%, 98%);
-    --Medium-Gray: hsl(0, 0%, 41%);
-    --Almost-Black: hsl(0, 0%, 8%);
-  }
+  font-family: "Epilogue", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Almost-White: hsl(0, 0%, 98%);
+  --Medium-Gray: hsl(0, 0%, 41%);
+  --Almost-Black: hsl(0, 0%, 8%);
+}
 
-  body {
-    min-height: 100vh;
-    width: 100%;
-  }
-  img {
-    max-width: 100%;
-  }
+body {
+  min-height: 100vh;
+  /* body and other block type elements are 100% width by default */
+  /* width: 100%; */
+}
+img {
+  max-width: 100%;
+}
 .outlined-btn,
 .transparent-btn {
   padding: 1rem 2rem;
@@ -43,207 +44,242 @@
 }
 .hero-btn {
   background-color: var(--Almost-Black);
+  /* border in hover state was adding height to the item and causing flickering */
+  border: 1px solid var(--Almost-Black);
   width: fit-content;
   padding: 1rem 2rem;
   color: var(--Almost-White);
   border-radius: 10px;
   cursor: pointer;
+  /* you can align only the items you need in a flex box and let the others strech by default */
+  /* this way you don't need to set 100% width on other elements if only 1 of them is centered */
+  align-self: center;
 }
 .hero-btn:hover {
-    background-color: var(--Almost-White);
-    border: 1px solid var(--Almost-Black);
-    color: var(--Almost-Black);
-    font-weight: 700;
-  }
-  nav {
-    height: 80px;
-    display: flex;
-    align-items: center;
-  }
+  background-color: var(--Almost-White);
+  color: var(--Almost-Black);
+  font-weight: 700;
+}
+/* .nav-container is already centered by margin: 0 auto */
+/* nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+} */
+.nav-container {
+  display: flex;
+  /* width: 100%; */
+  /* items in flexbox are stretch by default and in your case they don't require centering */
+  /* align-items: center; */
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-inline: 3rem;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  margin-left: 4rem;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links li {
+  cursor: pointer;
+  color: var(--Medium-Gray);
+  /* display: flex; */
+  /* align-items: center; */
+  /* gap: 0.5rem; */
+  position: relative;
+  user-select: none;
+}
+
+.nav-links li:hover {
+  color: var(--Almost-Black);
+}
+.mobile-menu-btn {
+  display: none;
+}
+.mobile-menu {
+  display: none;
+}
+.sub-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  gap: 1rem;
+  border-radius: 10px;
+  padding: 1px;
+  top: 30px;
+}
+/* They both have the same rules, so it can be moved in .sub-menu */
+/* .one {
+  top: 30px;
+}
+.two {
+  top: 30px;
+} */
+
+.text-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sub-menu .sub-link {
+  /* Only the items with icon should have display flex and align items center */
+  /* create a separate class for this (text-with-icon). */
+  /* display: flex;
+  align-items: center; */
+  /* width: 120px; */
+  /* gap: 0.5rem; */
+  padding: 1px;
+}
+
+.active .arrow {
+  transform: rotate(180deg);
+  transition: 0.2s;
+}
+/* .active-menu {
+  display: flex;
+} */
+/* main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 80px);
+} */
+.main-container {
+  /* you almost never need to set rigid height */
+  margin-block-start: 0.5rem;
+  display: grid;
+  max-width: 1100px;
+  gap: 5rem;
+  grid-template-columns: 1fr 1fr;
+  /* it can be centered with margin */
+  margin-inline: auto;
+}
+.main-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.main-heading {
+  font-size: 4rem;
+}
+.main-content {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--Medium-Gray);
+}
+.logos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media screen and (max-width: 800px) {
   .nav-container {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding-inline: 3rem;
-  }
-  .nav-left {
-    display: flex;
-    align-items: center;
-  }
-  .nav-links {
-    display: flex;
-    margin-left: 4rem;
-    list-style: none;
-    gap: 2.5rem;
-  }
-  .nav-links li {
-    cursor: pointer;
-    color: var(--Medium-Gray);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    position: relative;
-    user-select: none;
-  }
-  .nav-links li:hover {
-    color: var(--Almost-Black);
+    padding: 1rem;
   }
   .mobile-menu-btn {
-    display: none;
+    display: flex;
+    cursor: pointer;
+    z-index: 2;
   }
   .mobile-menu {
-    display: none;
-  }
-  .sub-menu {
-    display: none;
     flex-direction: column;
     position: absolute;
-    background-color: white;
-    gap: 1rem;
-    border-radius: 10px;
-    padding: 1px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 70%;
+    background-color: var(--Almost-White);
+    padding: 5rem 2rem;
   }
-  .one {
-    top: 30px;
-  }
-  .two {
-    top: 30px;
-  }
-  .sub-menu .sub-link {
-    display: flex;
-    align-items: center;
-    width: 120px;
-    gap: 0.5rem;
-    padding: 1px;
-  }
-  .active .arrow {
-    transform: rotate(180deg);
-    transition: 0.2s;
-  }
-  .active-menu {
-    display: flex;
-  }
-  main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 80px);
-  }
-  .main-container {
-    display: grid;
-    max-width: 1100px;
-    gap: 5rem;
-    grid-template-columns: 1fr 1fr;
-  }
-  .main-left {
+  .mobile-links {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 1rem;
+    list-style: none;
   }
-  .main-heading {
-    font-size: 4rem;
-  }
-  .main-content {
-    font-size: 18px;
-    line-height: 1.8;
+  .mobile-links li {
+    display: flex;
     color: var(--Medium-Gray);
+    flex-direction: column;
+    cursor: pointer;
   }
-  .logos {
+  /* .mobile-links li p {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 1rem;
+  } */
+  .mobile-sub {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem;
   }
-  .attribution { 
-    font-size: 11px; 
-    text-align: center; }
-  .attribution a { 
-    color: hsl(228, 45%, 44%); 
+  .overflow {
+    background-color: black;
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    opacity: 0.7;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-right {
+    display: none;
+  }
+  main {
+    align-items: flex-start;
+  }
+  .main-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .main-left {
+    /* align-items: center; */
+    /* text-align: center; */
+    gap: 2rem;
+  }
+  .main-heading {
+    font-size: 2.2rem;
+  }
+  .main-heading br {
+    display: none;
+  }
+  .logos {
+    /* width: 100%; */
+    padding-inline: 1rem;
+  }
 }
-  @media screen and (max-width: 800px) {
-    .nav-container {
-      padding: 1rem;
-    }
-    .mobile-menu-btn {
-      display: flex;
-      cursor: pointer;
-      z-index: 2;
-    }
-    .mobile-menu {
-      flex-direction: column;
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 70%;
-      background-color: var(--Almost-White);
-      padding: 5rem 2rem;
-    }
-    .mobile-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      list-style: none;
-    }
-    .mobile-links li {
-      display: flex;
-      color: var(--Medium-Gray);
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .mobile-links li p {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .mobile-sub {
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      margin: 1rem;
-    }
-    .overflow {
-      background-color: black;
-      display: none;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 30%;
-      opacity: 0.7;
-    }
-    .nav-links {
-      display: none;
-    }
-    .nav-right {
-      display: none;
-    }
-    main {
-      align-items: flex-start;
-    }
-    .main-container {
-      display: flex;
-      flex-direction: column-reverse;
-    }
-    .main-left {
-      align-items: center;
-      text-align: center;
-      gap: 2rem;
-    }
-    .main-heading {
-      font-size: 2.2rem;
-    }
-    .main-heading br {
-      display: none;
-    }
-    .logos {
-      width: 100%;
-      padding-inline: 1rem;
-      flex-wrap: wrap;
-    }
-    .active-menu {
-      display: flex;
-    }
-  }
+
+/* THis class used to be duplicate. You don't need it in your media query.  */
+/* You just need it to have more priority as it's lower in the file */
+
+.active-menu {
+  display: flex;
+}
+
+/* Create a utility class called display-none. 
+Add it to hide an element and remove it to display the element. 
+This way you wont have priority problems.
+This will also make your javascript simpler. */
