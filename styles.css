@@ -13,10 +13,19 @@
   }
 
   body {
-    min-height: 100vh;
+    overflow-y: scroll;
+    height: 100%;
+    line-height: 1.5;
+    background-color: var(--Almost-White);
   }
   img {
     max-width: 100%;
+    display: block;
+  }
+  ul, li {
+    margin:0;
+    padding: 0;
+    list-style: none;
   }
 .outlined-btn,
 .transparent-btn {
@@ -54,47 +63,44 @@
     color: var(--Almost-Black);
     font-weight: 700;
   }
-  .nav-container {
+  header {
     display: flex;
-    justify-content: space-between;
     max-width: 1440px;
-    margin: 0 auto;
-    padding-inline: 3rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px 40px;
+    margin-inline: auto;
   }
-  .nav-left {
-    display: flex;
-    align-items: center;
-  }
-  .nav-links {
-    display: flex;
-    margin-left: 4rem;
-    list-style: none;
-    gap: 2.5rem;
-  }
-  .nav-links li {
+  /* nav {
+    display: none;
+  } */
+  .menu-icon {
     cursor: pointer;
-    color: var(--Medium-Gray);
-    position: relative;
-    user-select: none;
+    z-index: 99;
+    position: fixed;
+    margin-left: 85%;
   }
-  .nav-links li:hover {
-    color: var(--Almost-Black);
-  }
-  .mobile-menu-btn {
-    display: none;
-  }
-  .mobile-menu {
-    display: none;
-  }
-  .sub-menu {
-    display: none;
+  header.active nav {
+    display: flex;
     flex-direction: column;
-    position: absolute;
-    background-color: white;
+  }
+  nav ul a, nav ul button {
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
-    border-radius: 10px;
-    padding: 1px;
-    top: 30px;
+    color: var(--Medium-Gray);
+    text-decoration: none;
+    align-items: center;
+    border: none;
+  }
+
+   .sub-menu-1 li {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+  }
+  .sub-menu-1, .submenu-2{
+    display:none;
   }
   .text-with-icon{
     display: flex;
@@ -153,17 +159,16 @@
   .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
-  @media screen and (max-width: 800px) {
+  @media screen and (min-width: 1100px) {
     .nav-container {
       padding: 1rem;
     }
     .mobile-menu-btn {
-      display: flex;
-      cursor: pointer;
-      z-index: 2;
+      display: none;
     }
     .mobile-menu {
-      flex-direction: column;
+      /* flex-direction: column; */
+      flex-wrap: wrap;
       position: absolute;
       right: 0;
       top: 0;
@@ -175,6 +180,7 @@
     .mobile-links {
       display: flex;
       flex-direction: column;
+      /* flex-wrap: wrap; */
       gap: 1rem;
       list-style: none;
     }
