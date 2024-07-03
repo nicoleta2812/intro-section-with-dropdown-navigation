@@ -11,141 +11,148 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="nav-container">
-          <div class="nav-left">
-            <div class="logo"><img src="./images/logo.svg" alt="logo" /></div>
-            <ul class="nav-links">
-              <li class="text-with-icon">
+    <header class="header">
+      <a class="logo"><img src="./images/logo.svg" alt="logo" /></a>
+      <img src="./images/icon-menu.svg" alt="" class="bars" />
+      <nav class="menu">
+        <ul class="nav-menu">
+          <li class="features-button">
+            <button>
+              Features
+              <img
+                class="arrow"
+                src="./images/icon-arrow-down.svg"
+                alt="arrow-down"
+              />
+            </button>
+            <ul class="sub-menu-1 one">
+              <li>
+                <img
+                  src="./images/icon-todo.svg"
+                  alt=""
+                  width="15"
+                  height="15"
+                />
+                <a href="">TodoList</a>
+              </li>
+              <li>
+                <img
+                  src="./images/icon-calendar.svg"
+                  alt=""
+                  width="15"
+                  height="15"
+                />
+                <a href="">Calendar</a>
+              </li>
+              <li>
+                <img src="./images/icon-reminders.svg" alt="" />
+                <a href="">Reminders</a>
+              </li>
+              <li>
+                <img src="./images/icon-planning.svg" alt="" />
+                <a href="">Planning</a>
+              </li>
+            </ul>
+          </li>
+          <li class="company-button">
+            <button>
+              Company
+              <img
+                class="arrow"
+                src="./images/icon-arrow-down.svg"
+                alt="arrow down"
+              />
+            </button>
+            <ul class="sub-menu-2 two">
+              <li class="sub-link"><a href="">History</a></li>
+              <li class="sub-link"><a href="">Out Team</a></li>
+              <li class="sub-link"><a href="">Blog</a></li>
+            </ul>
+          </li>
+          <li><a href="">Careers</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+
+        <!-- <div class="mobile-menu">
+          <ul class="mobile-links">
+            <li>
+              <p class="text-with-icon">
                 Features
                 <img
                   class="arrow"
                   src="./images/icon-arrow-down.svg"
                   alt="arrow-down"
                 />
-                <div class="sub-menu one">
-                  <p class="sub-link text-with-icon">
-                    <img src="./images/icon-todo.svg" alt="" />TodoList
-                  </p>
-                  <p class="sub-link text-with-icon">
-                    <img src="./images/icon-calendar.svg" alt="" />Calendar
-                  </p>
-                  <p class="sub-link text-with-icon">
-                    <img src="./images/icon-reminders.svg" alt="" />Reminders
-                  </p>
-                  <p class="sub-link text-with-icon">
-                    <img src="./images/icon-planning.svg" alt="" />Planning
-                  </p>
-                </div>
-              </li>
-              <li class="text-with-icon">
+              </p>
+              <div class="mobile-sub">
+                <p class="sub-link text-with-icon">
+                  <img src="./images/icon-todo.svg" alt="" />TodoList
+                </p>
+                <p class="sub-link text-with-icon">
+                  <img src="./images/icon-calendar.svg" alt="" />Calendar
+                </p>
+                <p class="sub-link text-with-icon">
+                  <img src="./images/icon-reminders.svg" alt="" />Reminders
+                </p>
+                <p class="sub-link text-with-icon">
+                  <img src="./images/icon-planning.svg" alt="" />Planning
+                </p>
+              </div>
+            </li>
+            <li>
+              <p class="text-with-icon">
                 Company
                 <img
                   class="arrow"
                   src="./images/icon-arrow-down.svg"
-                  alt="arrow down"
+                  alt="arrow-down"
                 />
-                <div class="sub-menu two">
-                  <p class="sub-link">History</p>
-                  <p class="sub-link">Out Team</p>
-                  <p class="sub-link">Blog</p>
-                </div>
-              </li>
-              <li>Careers</li>
-              <li>About</li>
-            </ul>
-          </div>
-          <div class="mobile-menu-btn">
-            <img src="./images/icon-menu.svg" alt="menu" />
-          </div>
-          <div class="mobile-menu">
-            <ul class="mobile-links">
-              <li>
-                <p class="text-with-icon">
-                  Features
-                  <img
-                    class="arrow"
-                    src="./images/icon-arrow-down.svg"
-                    alt="arrow-down"
-                  />
-                </p>
-                <div class="mobile-sub">
-                  <p class="sub-link text-with-icon">
-                    <img src="./images/icon-todo.svg" alt="" />TodoList
-                  </p>
-                  <p class="sub-link text-with-icon">
-                    <img src="./images/icon-calendar.svg" alt="" />Calendar
-                  </p>
-                  <p class="sub-link text-with-icon">
-                    <img src="./images/icon-reminders.svg" alt="" />Reminders
-                  </p>
-                  <p class="sub-link text-with-icon">
-                    <img src="./images/icon-planning.svg" alt="" />Planning
-                  </p>
-                </div>
-              </li>
-              <li>
-                <p class="text-with-icon">
-                  Company
-                  <img
-                    class="arrow"
-                    src="./images/icon-arrow-down.svg"
-                    alt="arrow-down"
-                  />
-                </p>
-                <div class="mobile-sub">
-                  <p class="sub-link">History</p>
-                  <p class="sub-link">Our Team</p>
-                  <p class="sub-link">Blog</p>
-                </div>
-              </li>
-              <li>Careers</li>
-              <li>About</li>
-              <li><button class="transparent-btn">Login</button></li>
-              <li><button class="outlined-btn">Register</button></li>
-            </ul>
-          </div>
-          <div class="nav-right">
-            <button class="transparent-btn">Login</button>
-            <button class="outlined-btn">Register</button>
-          </div>
-        </div>
+              </p>
+              <div class="mobile-sub">
+                <p class="sub-link">History</p>
+                <p class="sub-link">Our Team</p>
+                <p class="sub-link">Blog</p>
+              </div>
+            </li>
+            <li>Careers</li>
+            <li>About</li>
+            <li><button class="transparent-btn">Login</button></li>
+            <li><button class="outlined-btn">Register</button></li>
+          </ul>
+        </div> -->
+        <ul class="nav-btns nav-menu">
+          <button class="transparent-btn">Login</button>
+          <button class="outlined-btn">Register</button>
+        </ul>
       </nav>
     </header>
     <main>
-      <div class="main-container">
-        <section class="main-left">
-          <h1 class="main-heading">Make <br />remote work</h1>
+      <img
+        class="hero"
+        src="./images/image-hero-mobile.png"
+        alt="mobile-image"
+      />
+      <section class="remote">
+        <section class="info">
+          <h2 class="main-heading">Make <br />remote work</h2>
           <p class="main-content">
             Get your team in sync, no matter your location. Streamline
             processes, create team rituals, and watch productivity soar.
           </p>
           <button class="hero-btn">Learn More</button>
-          <div class="logos">
-            <img src="./images/client-databiz.svg" alt="databiz" />
-            <img src="./images/client-audiophile.svg" alt="client-audiophile" />
-            <img src="./images/client-meet.svg" alt="client-meet" />
-            <img src="./images/client-maker.svg" alt="client-maker" />
-          </div>
         </section>
-        <section class="main-right">
-          <picture>
-            <source
-              media="max-width:800px"
-              srcset="./images/image-hero-mobile.png"
-            />
-            <img src="./images/image-hero-desktop.png" alt="hero image" />
-          </picture>
-        </section>
-      </div>
+        <div class="logos">
+          <img src="./images/client-databiz.svg" alt="databiz" />
+          <img src="./images/client-audiophile.svg" alt="client-audiophile" />
+          <img src="./images/client-meet.svg" alt="client-meet" />
+          <img src="./images/client-maker.svg" alt="client-maker" />
+        </div>
+      </section>
     </main>
-    <div class="overflow"></div>
-
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
