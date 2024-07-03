@@ -71,9 +71,9 @@
     padding: 25px 40px;
     margin-inline: auto;
   }
-  /* nav {
+  nav {
     display: none;
-  } */
+  }
   .menu-icon {
     cursor: pointer;
     z-index: 99;
@@ -99,59 +99,58 @@
    align-items: center;
    gap: 1rem;
   }
-  .sub-menu-1, .submenu-2{
+  .sub-menu-1, .sub-menu-2{
     display:none;
   }
-  .text-with-icon{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+
+  .features-button, .company-button {
+    position: relative;
   }
-  .sub-menu .sub-link {
-    /* display: flex;
-    align-items: center;
-    width: 120px;
-    gap: 0.5rem; */
-    padding: 1px;
+  h1 img {
+    width: 100px;
   }
-  .active .arrow {
-    transform: rotate(180deg);
-    transition: 0.2s;
-  }
-  /* .active-menu {
-    display: flex;
-  }
-  main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 80px);
-  } */
-  .main-container {
-    margin-block-start: 0.5rem;
-    display: grid;
-    max-width: 1100px;
-    gap: 5rem;
-    grid-template-columns: 1fr 1fr;
-    margin-inline: auto;
-  }
-  .main-left {
+  main,.remote, .info {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
   }
-  .main-heading {
+  .remote {
+    gap: 6rem;
+  }
+  .info {
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 3rem;
+  }
+  main {
+    gap: 8rem;
+  }
+  h2 {
     font-size: 4rem;
+    line-height: 5rem;
   }
-  .main-content {
-    font-size: 18px;
-    line-height: 1.8;
+  .info p{
     color: var(--Medium-Gray);
+    font-size: 18px;
+    font-weight: 700;
+    width: 90%;
+    line-height: 1.5rem;
   }
   .logos {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .logos img{
+    max-width: 70px;
+    height: 100%;
+    object-fit: contain;
+  }
+  .nav-btns {
+    align-items: center;
+    gap: 20px;
   }
   .attribution { 
     font-size: 11px; 
@@ -160,88 +159,59 @@
     color: hsl(228, 45%, 44%); 
 }
   @media screen and (min-width: 1100px) {
-    .nav-container {
-      padding: 1rem;
+    main{
+      display: grid;
+      grid-template-columns: 35rem 1fr;
+      margin: 0 auto;
+      gap: 8rem;
+      max-width: 1000px;
+      justify-content: center;
+      margin-top: 2.5rem;
+
     }
-    .mobile-menu-btn {
-      display: none;
-    }
-    .mobile-menu {
-      /* flex-direction: column; */
-      flex-wrap: wrap;
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 70%;
-      background-color: var(--Almost-White);
-      padding: 5rem 2rem;
-    }
-    .mobile-links {
-      display: flex;
-      flex-direction: column;
-      /* flex-wrap: wrap; */
-      gap: 1rem;
-      list-style: none;
-    }
-    .mobile-links li {
-      display: flex;
-      color: var(--Medium-Gray);
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .mobile-links li p {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .mobile-sub {
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      margin: 1rem;
-    }
-    .overflow {
-      background-color: black;
-      display: none;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 30%;
-      opacity: 0.7;
-    }
-    .nav-links {
-      display: none;
-    }
-    .nav-right {
-      display: none;
-    }
-    main {
-      align-items: flex-start;
-    }
-    .main-container {
-      display: flex;
-      flex-direction: column-reverse;
-    }
-    .main-left {
-      align-items: center;
-      text-align: center;
-      gap: 2rem;
-    }
-    .main-heading {
-      font-size: 2.2rem;
-    }
-    .main-heading br {
-      display: none;
-    }
-    .logos {
-      width: 100%;
-      padding-inline: 1rem;
-      flex-wrap: wrap;
-    }
-    
+   .hero {
+    content: url("./images/image-hero-desktop.png");
+    object-fit: cover;
+    grid-column: 2;
+    max-width: 500px;
+   }
+   .remote {
+    grid-row: 1;
+   }
+   header {
+    gap: 60px;
+   }
+   nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+   }
+   nav ul {
+    display: flex;
+    flex-direction: row;;
+   }
+   .remote {
+    max-width: 95%;
+    margin-top: 100px;
+    margin-left: 40px;
+   }
+   .info{
+    text-align: left;
+    align-items: flex-start;
+    padding: 0;
+   }
+   .menu ul {
+    gap: 40px;
+   }
+   .menu-icon{
+    display: none;
+   }
+   .logos{
+    justify-content: space-between;
+   }
+   .logos img{
+    max-width: 100px;
+   }
   }
-  .active-menu {
-      display: flex;
-    }
