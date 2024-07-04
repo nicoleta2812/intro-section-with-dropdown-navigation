@@ -40,3 +40,14 @@ const header = document.querySelector(".header");
 IconMenu.addEventListener("click", () =>{
     header.classList.toggle("active")
 })
+
+const Features = document.querySelector(".features");
+const FeaturesSubMenu = document.querySelector(".sub-menu-1")
+Features.addEventListener("click", () => {
+    FeaturesSubMenu.classList.toggle("active")
+})
+const Company = document.querySelector(".company");
+const  CompanySubMneu = document.querySelector(".sub-menu-2");
+Company.addEventListener("click", () => {
+    CompanySubMneu.classList.toggle("active")
+})
