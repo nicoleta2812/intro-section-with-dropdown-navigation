@@ -80,10 +80,7 @@
     position: fixed;
     margin-left: 85%;
   }
-  header.active nav {
-    display: flex;
-    flex-direction: column;
-  }
+  
   nav ul a, nav ul button {
     display: flex;
     flex-direction: row;
@@ -102,9 +99,9 @@
   .sub-menu-1, .sub-menu-2{
     display:none;
   }
-
   .features-button, .company-button {
     position: relative;
+    background-color: transparent;
   }
   h1 img {
     width: 100px;
@@ -158,6 +155,42 @@
   .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+header.active .menu-icon{
+  content: url("./images/icon-close-menu.svg")
+}
+header.active nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Almost-White);
+    height: 100%;
+    padding: 2rem;
+    left: 40%;
+    top: 0;
+    right: 0;
+    gap: 2rem;
+  }
+header.active::before{
+  content: "";
+  background-color: var(--Almost-Black);
+  opacity: 70%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0; 
+  left: 0;
+}
+header.active .nav-menu{  
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 10px;
+  gap: 1rem;
+}
+header.active .nav-btns{
+  margin: 0 auto;
+  width: max-content;
+}
   @media screen and (min-width: 1100px) {
     main{
       display: grid;
@@ -167,7 +200,6 @@
       max-width: 1000px;
       justify-content: center;
       margin-top: 2.5rem;
-
     }
    .hero {
     content: url("./images/image-hero-desktop.png");
@@ -190,7 +222,7 @@
    }
    nav ul {
     display: flex;
-    flex-direction: row;;
+    flex-direction: row;
    }
    .remote {
     max-width: 95%;

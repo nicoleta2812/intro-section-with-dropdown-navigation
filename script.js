@@ -34,4 +34,9 @@
 //     });
 //   });
   
-  
+const IconMenu = document.querySelector(".menu-icon");
+const header = document.querySelector(".header");
+
+IconMenu.addEventListener("click", () =>{
+    header.classList.toggle("active")
+})
