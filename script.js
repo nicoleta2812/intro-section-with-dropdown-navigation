@@ -33,21 +33,22 @@
 //       subMenu.classList.toggle("active-menu");
 //     });
 //   });
-  
+
 const IconMenu = document.querySelector(".menu-icon");
 const header = document.querySelector(".header");
 
-IconMenu.addEventListener("click", () =>{
-    header.classList.toggle("active")
-})
+IconMenu.addEventListener("click", () => {
+  header.classList.toggle("active");
+});
 
-const Features = document.querySelector(".features");
-const FeaturesSubMenu = document.querySelector(".sub-menu-1")
-Features.addEventListener("click", () => {
-    FeaturesSubMenu.classList.toggle("active")
-})
-const Company = document.querySelector(".company");
-const  CompanySubMneu = document.querySelector(".sub-menu-2");
-Company.addEventListener("click", () => {
-    CompanySubMneu.classList.toggle("active")
-})
+// https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Event_bubbling#event_delegation
+const menu = document.querySelector(".menu");
+
+menu.addEventListener("click", (event) => {
+  const subMenuParent = event.target.closest(".sub-menu-parent");
+
+  if (subMenuParent) {
+    const submenu = subMenuParent.querySelector(".sub-menu");
+    submenu.classList.toggle("display-none");
+  }
+});
