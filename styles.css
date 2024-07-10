@@ -101,15 +101,13 @@
     cursor: pointer;
   }
 
-   .sub-menu-1 li {
+   .sub-menu li {
    display: flex;
    align-items: center;
    gap: 1rem;
   }
-  .sub-menu-1, .sub-menu-2{
-    display:none;
-  }
-  .features, .company {
+
+  .sub-menu-parent {
     position: relative;
     background-color: transparent;
   }
@@ -201,8 +199,7 @@ header.active .nav-btns{
   margin: 0 auto;
   width: max-content;
 }
-.sub-menu-1.active,
-.sub-menu-2.active{
+.sub-menu {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -213,13 +210,18 @@ header.active .nav-btns{
   top: 2rem;
   z-index: 1;
 }
+
+.display-none {
+  display: none;
+}
+
   @media screen and (min-width: 1100px) {
     main{
       display: grid;
-      grid-template-columns: 35rem 1fr;
+      grid-template-columns: 1.2fr 1fr;
       margin: 0 auto;
       gap: 8rem;
-      max-width: 1000px;
+      max-width: 1100px;
       justify-content: center;
       margin-top: 2.5rem;
     }
@@ -227,7 +229,6 @@ header.active .nav-btns{
     content: url("./images/image-hero-desktop.png");
     object-fit: cover;
     grid-column: 2;
-    max-width: 500px;
    }
    .remote {
     grid-row: 1;
