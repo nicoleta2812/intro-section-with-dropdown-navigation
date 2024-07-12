@@ -216,10 +216,10 @@ header.active .nav-btns{
   @media screen and (min-width: 1100px) {
     main{
       display: grid;
-      grid-template-columns: 35rem 1fr;
+      grid-template-columns: 1fr 1fr;
       margin: 0 auto;
       gap: 8rem;
-      max-width: 1000px;
+      max-width: 1200px;
       justify-content: center;
       margin-top: 2.5rem;
     }
@@ -227,7 +227,6 @@ header.active .nav-btns{
     content: url("./images/image-hero-desktop.png");
     object-fit: cover;
     grid-column: 2;
-    max-width: 500px;
    }
    .remote {
     grid-row: 1;
