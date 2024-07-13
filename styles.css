@@ -18,9 +18,13 @@
     line-height: 1.5;
     background-color: var(--Almost-White);
   }
-  .logo {
+  .flex-center{
     display: flex;
     align-items: center;
+  }
+  .logo {
+    /* display: flex;
+    align-items: center; */
     justify-content: center;
     height: 55px;
   }
@@ -89,12 +93,12 @@
   }
   
   nav ul a {
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     gap: 0.5rem;
     color: var(--Medium-Gray);
     text-decoration: none;
-    align-items: center;
+    /* align-items: center; */
     border: none;
     width: max-content;
     /* padding: 10px; */
@@ -102,8 +106,8 @@
   }
 
    .sub-menu-1 li {
-   display: flex;
-   align-items: center;
+   /* display: flex;
+   align-items: center; */
    gap: 1rem;
   }
   .sub-menu-1, .sub-menu-2{
@@ -124,8 +128,8 @@
     gap: 6rem;
   }
   .info {
-    text-align: center;
-    align-items: center;
+    /* text-align: center;
+    align-items: center; */
     padding: 1rem;
     gap: 3rem;
   }
@@ -144,8 +148,8 @@
     line-height: 1.5rem;
   }
   .logos {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 0.8rem;
